@@ -24,6 +24,8 @@ Bộ script Python này được thiết kế để tương tác với Pharos Te
 5. **Gửi Giao dịch (TX)**: Gửi giao dịch đến các địa chỉ ngẫu nhiên hoặc trong address.txt.
 6. **Swap Token**: Hoán đổi token (PHRS, USDC, USDT) thông qua Zenith DEX trên Pharos Testnet.
 7. **Thêm Thanh khoản**: Cung cấp thanh khoản cho các cặp token (PHRS, USDC, USDT) trên Zenith DEX.
+8. **mintair.py**: Triển khai và tương tác với hợp đồng thông minh Mintair trên Pharos Testnet.
+
 
 
 ## 🛠️ Yêu cầu trước khi sử dụng
