@@ -74,6 +74,10 @@ async def run_nftcollection(language: str):
     from scripts.nftcollection import run_nftcollection as nftcollection_run
     await nftcollection_run(language)
 
+async def run_mintair(language: str):
+    from scripts.mintair import run_mintair as mintair_run
+    await mintair_run(language)
+
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -88,6 +92,7 @@ SCRIPT_MAP = {
     "deploytoken": run_deploytoken,
     "sendtoken": run_sendtoken,
     "nftcollection": run_nftcollection,
+    "mintair": run_mintair,
     "exit": cmd_exit
 }
 
@@ -102,7 +107,8 @@ def get_available_scripts(language):
             {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Thoát", "value": "exit"},
+            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
+            {"name": "9. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
@@ -112,7 +118,8 @@ def get_available_scripts(language):
             {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Exit", "value": "exit"},
+            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
+            {"name": "9. Thoát", "value": "exit"},
         ]
     }
     return scripts[language]
