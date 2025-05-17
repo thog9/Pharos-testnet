@@ -23,6 +23,8 @@ This collection of Python scripts empowers you to interact seamlessly with the P
 5. **Send Transactions (TX)**: Send transactions to random addresses or those in address.txt.
 6. **Swap Tokens**: Swap tokens (PHRS, USDC, USDT) via Zenith DEX on the Pharos Testnet.
 7. **Add Liquidity**: Provide liquidity for token pairs (PHRS, USDC, USDT) on Zenith DEX.
+8. **mintair.py**: Deploy and interact with the Mintair smart contract on Pharos Testnet.
+
 
 
 ## 🛠️ Prerequisites
