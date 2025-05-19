@@ -78,6 +78,10 @@ async def run_mintair(language: str):
     from scripts.mintair import run_mintair as mintair_run
     await mintair_run(language)
 
+async def run_social(language: str):
+    from scripts.social import run_social as social_run
+    await social_run(language)
+
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -93,6 +97,7 @@ SCRIPT_MAP = {
     "sendtoken": run_sendtoken,
     "nftcollection": run_nftcollection,
     "mintair": run_mintair,
+    "social": run_social,
     "exit": cmd_exit
 }
 
@@ -108,7 +113,8 @@ def get_available_scripts(language):
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Thoát", "value": "exit"},
+            {"name": "9. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
+            {"name": "10. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
@@ -119,7 +125,8 @@ def get_available_scripts(language):
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Thoát", "value": "exit"},
+            {"name": "9. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
+            {"name": "10. Thoát", "value": "exit"},
         ]
     }
     return scripts[language]
