@@ -86,6 +86,14 @@ async def run_wrap(language: str):
     from scripts.wrap import run_wrap as wrap_run
     await wrap_run(language)
 
+async def run_easynode(language: str):
+    from scripts.easynode import run_easynode as easynode_run
+    await easynode_run(language)
+
+async def run_mintomnihub(language: str):
+    from scripts.mintomnihub import run_mintomnihub as mintomnihub_run
+    await mintomnihub_run(language)
+
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -103,6 +111,8 @@ SCRIPT_MAP = {
     "mintair": run_mintair,
     "social": run_social,
     "wrap": run_wrap,
+    "easynode": run_easynode,
+    "mintomnihub": run_mintomnihub,
     "exit": cmd_exit
 }
 
@@ -118,9 +128,12 @@ def get_available_scripts(language):
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
-            {"name": "10. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "11. Thoát", "value": "exit"},
+            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
+            {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
+            {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
+            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
+
+            {"name": "13. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
@@ -131,9 +144,12 @@ def get_available_scripts(language):
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
-            {"name": "10. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "11. Thoát", "value": "exit"},
+            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
+            {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
+            {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
+            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
+
+            {"name": "13. Thoát", "value": "exit"},
         ]
     }
     return scripts[language]
