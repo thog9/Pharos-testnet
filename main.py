@@ -116,6 +116,7 @@ SCRIPT_MAP = {
     "exit": cmd_exit
 }
 
+
 # Danh sách script và thông báo theo ngôn ngữ
 def get_available_scripts(language):
     scripts = {
@@ -127,11 +128,11 @@ def get_available_scripts(language):
             {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
+            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair", "locked": True},
+            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode", "locked": True},
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
+            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
 
             {"name": "13. Thoát", "value": "exit"},
         ],
@@ -143,11 +144,11 @@ def get_available_scripts(language):
             {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
+            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair", "locked": True},
+            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode", "locked": True},
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
+            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
 
             {"name": "13. Thoát", "value": "exit"},
         ]
@@ -190,7 +191,8 @@ def main():
             "error": "Lỗi: {}",
             "press_enter": "Nhấn Enter để tiếp tục...",
             "menu_title": "MENU CHÍNH",
-            "select_script": "Chọn script để chạy"
+            "select_script": "Chọn script để chạy",
+            "locked": "🔒 Script này bị khóa! Vui lòng vào group hoặc donate để mở khóa."
         },
         "en": {
             "running": "Running: {}",
@@ -198,7 +200,8 @@ def main():
             "error": "Error: {}",
             "press_enter": "Press Enter to continue...",
             "menu_title": "MAIN MENU",
-            "select_script": "Select script to run"
+            "select_script": "Select script to run",
+            "locked": "🔒 This script is locked! Please join our group or donate to unlock."
         }
     }
 
@@ -221,7 +224,20 @@ def main():
             continue
 
         selected_script_name = answers['script']
-        selected_script_value = next(script["value"] for script in available_scripts if script["name"] == selected_script_name)
+        selected_script = next(script for script in available_scripts if script["name"] == selected_script_name)
+        selected_script_value = selected_script["value"]
+
+        if selected_script.get("locked"):
+            _clear()
+            _banner()
+            print_border("SCRIPT BỊ KHÓA / LOCKED", Fore.RED)
+            print(f"{Fore.YELLOW}{messages[language]['locked']}")
+            print('')
+            print(f"{Fore.CYAN}→ Telegram: https://t.me/thogairdrops")
+            print(f"{Fore.CYAN}→ Donate: https://buymecafe.vercel.app{Style.RESET_ALL}")
+            print('')
+            input(f"{Fore.YELLOW}⏎ {messages[language]['press_enter']}{Style.RESET_ALL:^76}")
+            continue
 
         script_func = SCRIPT_MAP.get(selected_script_value)
         if script_func is None:
@@ -240,6 +256,7 @@ def main():
         except Exception as e:
             print(f"{Fore.RED}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
             print_border(messages[language]["error"].format(str(e)), Fore.RED)
+            print('')
             input(f"{Fore.YELLOW}⏎ {messages[language]['press_enter']}{Style.RESET_ALL:^76}")
 
 if __name__ == "__main__":
