@@ -94,6 +94,26 @@ async def run_mintomnihub(language: str):
     from scripts.mintomnihub import run_mintomnihub as mintomnihub_run
     await mintomnihub_run(language)
 
+async def run_mintbadgefaroswap(language: str):
+    from scripts.mintbadgefaroswap import run_mintbadgefaroswap as mintbadgefaroswap_run
+    await mintbadgefaroswap_run(language)
+
+async def run_mintbadge(language: str):
+    from scripts.mintbadge import run_mintbadge as mintbadge_run
+    await mintbadge_run(language)
+
+async def run_mintgotchipus(language: str):
+    from scripts.mintgotchipus import run_mintgotchipus as mintgotchipus_run
+    await mintgotchipus_run(language)
+
+async def run_conftnft(language: str):
+    from scripts.conftnft import run_conftnft as conftnft_run
+    await conftnft_run(language)
+
+async def run_domain(language: str):
+    from scripts.domain import run_domain as domain_run
+    await domain_run(language)
+
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -113,6 +133,11 @@ SCRIPT_MAP = {
     "wrap": run_wrap,
     "easynode": run_easynode,
     "mintomnihub": run_mintomnihub,
+    "mintbadgefaroswap": run_mintbadgefaroswap,
+    "mintbadge": run_mintbadge,
+    "mintgotchipus": run_mintgotchipus,
+    "conftnft": run_conftnft,
+    "domain": run_domain,
     "exit": cmd_exit
 }
 
@@ -133,6 +158,11 @@ def get_available_scripts(language):
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
+            {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
+            {"name": "14. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
+            {"name": "15. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "16. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
+            {"name": "17. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
             {"name": "13. Thoát", "value": "exit"},
         ],
@@ -149,6 +179,11 @@ def get_available_scripts(language):
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
+            {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
+            {"name": "14. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
+            {"name": "15. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "16. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
+            {"name": "17. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
             {"name": "13. Thoát", "value": "exit"},
         ]
