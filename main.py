@@ -98,6 +98,10 @@ async def run_mintbadgefaroswap(language: str):
     from scripts.mintbadgefaroswap import run_mintbadgefaroswap as mintbadgefaroswap_run
     await mintbadgefaroswap_run(language)
 
+async def run_mintbadgefaroswap2(language: str):
+    from scripts.mintbadgefaroswap2 import run_mintbadgefaroswap2 as mintbadgefaroswap2_run
+    await mintbadgefaroswap2_run(language)
+
 async def run_mintbadge(language: str):
     from scripts.mintbadge import run_mintbadge as mintbadge_run
     await mintbadge_run(language)
@@ -134,6 +138,7 @@ SCRIPT_MAP = {
     "easynode": run_easynode,
     "mintomnihub": run_mintomnihub,
     "mintbadgefaroswap": run_mintbadgefaroswap,
+    "mintbadgefaroswap2": run_mintbadgefaroswap2,
     "mintbadge": run_mintbadge,
     "mintgotchipus": run_mintgotchipus,
     "conftnft": run_conftnft,
@@ -159,12 +164,13 @@ def get_available_scripts(language):
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
             {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
-            {"name": "14. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
-            {"name": "15. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "16. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
-            {"name": "17. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
+            {"name": "14. Mint NFT FaroSwap Testnet Badge 2 -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap2"},
+            {"name": "15. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
+            {"name": "16. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "17. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
+            {"name": "18. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "13. Thoát", "value": "exit"},
+            {"name": "19. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
@@ -180,12 +186,13 @@ def get_available_scripts(language):
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub", "locked": True},
             {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
-            {"name": "14. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
-            {"name": "15. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "16. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
-            {"name": "17. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
+            {"name": "14. Mint NFT FaroSwap Testnet Badge 2 -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap2"},
+            {"name": "15. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
+            {"name": "16. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "17. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
+            {"name": "18. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "13. Thoát", "value": "exit"},
+            {"name": "19. Thoát", "value": "exit"},
         ]
     }
     return scripts[language]
