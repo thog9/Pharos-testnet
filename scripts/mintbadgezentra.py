@@ -415,7 +415,7 @@ async def process_wallet(index: int, profile_num: int, private_key: str, proxy: 
     return result
 
 # Hàm chính
-async def run_mintbadgefaroswap(language: str = 'vi'):
+async def run_mintbadgezentra(language: str = 'vi'):
     print()
     print_border(LANG[language]['title'], Fore.CYAN)
     print()
@@ -468,4 +468,4 @@ async def run_mintbadgefaroswap(language: str = 'vi'):
     print()
 
 if __name__ == "__main__":
-    asyncio.run(run_mintbadgefaroswap('vi'))
+    asyncio.run(run_mintbadgezentra('vi'))
