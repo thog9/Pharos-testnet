@@ -122,6 +122,10 @@ async def run_domain(language: str):
     from scripts.domain import run_domain as domain_run
     await domain_run(language)
 
+async def run_primussend(language: str):
+    from scripts.primussend import run_primussend as primussend_run
+    await primussend_run(language)
+
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
     print_border(messages[language], Fore.GREEN)
@@ -148,6 +152,7 @@ SCRIPT_MAP = {
     "mintgotchipus": run_mintgotchipus,
     "conftnft": run_conftnft,
     "domain": run_domain,
+    "primussend": run_primussend,
     "exit": cmd_exit
 }
 
@@ -176,14 +181,17 @@ def get_available_scripts(language):
             {"name": "18. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
             {"name": "19. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "20. Thoát", "value": "exit"},
+            {"name": "20. Gửi TIP ngẫu nhiên hoặc File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend", "locked": True},
+            
+
+            {"name": "21. Thoát", "value": "exit"},
         ],
         'en': [
             {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
             {"name": "2. Deploy Token smart-contract | Pharos Testnet", "value": "deploytoken"},
-            {"name": "3. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
+            {"name": "3. Send Token ERC20 random or File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
             {"name": "4. Deploy NFT smart-contract | Pharos Testnet", "value": "nftcollection"},
-            {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
+            {"name": "5. Send TX random or File (address.txt) | Pharos Testnet", "value": "sendtx"},
             {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
             {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity", "locked": True},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair", "locked": True},
@@ -199,7 +207,9 @@ def get_available_scripts(language):
             {"name": "18. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft", "locked": True},
             {"name": "19. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "20. Thoát", "value": "exit"},
+            {"name": "20. Send TIPs random or File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend", "locked": True},
+
+            {"name": "21. Thoát", "value": "exit"},
         ]
     }
     return scripts[language]
