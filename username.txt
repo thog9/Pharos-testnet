@@ -1,9 +1,9 @@
 # Example
 
-Username 1
-Username 2
-Username 3
+USERNAME 1
+USERNAME 2
+USERNAME 3
 
-Namemail@gmail.com 1
-Namemail@gmail.com 2
-Namemail@gmail.com 3
+NAMEMAIL@gmail.com 1
+NAMEMAIL@gmail.com 2
+NAMEMAIL@gmail.com 3
