@@ -110,7 +110,7 @@ CONTROLLER_ABI = [
 LNG = {
     'vi': {
         'title': '✨ PNS DOMAIN MINT - PHAROS TESTNET ✨',
-        'info': 'ℹ Thông tin!',
+        'info': 'ℹ Thông tin',
         'found': 'Tìm thấy',
         'wallets': 'ví',
         'processing': '⚠️ ĐANG XỬ LÝ {KEYS} VÍ',
