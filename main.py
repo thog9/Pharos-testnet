@@ -186,8 +186,8 @@ def get_available_scripts(language):
             {"name": "18. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft"},
             {"name": "19. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "20. Gửi TIP ngẫu nhiên hoặc File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend", "locked": True},
-            {"name": "21. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain", "locked": True},
+            {"name": "20. Gửi TIP ngẫu nhiên hoặc File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend"},
+            {"name": "21. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain"},
             
 
             {"name": "22. Thoát", "value": "exit"},
@@ -213,8 +213,8 @@ def get_available_scripts(language):
             {"name": "18. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft"},
             {"name": "19. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "20. Send TIPs random or File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend", "locked": True},
-            {"name": "21. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain", "locked": True},
+            {"name": "20. Send TIPs random or File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend"},
+            {"name": "21. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain"},
 
             {"name": "22. Thoát", "value": "exit"},
         ]
