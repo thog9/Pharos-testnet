@@ -69,11 +69,11 @@ CONTRACT_ABI = [
 LNG = {
     'vi': {
         'title': '✨ GỬI TIP - PHAROS TESTNET ✨',
-        'info': 'ℹ Thông tin!',
+        'info': 'ℹ Thông tin',
         'found': 'Tìm thấy',
-        'wallets': 'ví dụ',
+        'wallets': 'ví',
         'processing': '⚠️ ĐANG XỬ LÝ {KEYS} VÍ',
-        'found_proxies': 'Tìm thấy {count} proxy trong proxies.txt.txt!',
+        'found_proxies': 'Tìm thấy {count} proxy trong proxies.txt!',
         'enter_tip_count': '✦ SỐ LẦN TIP',
         'tip_count': 'Nhập số lần TIP (mặc định 1): ',
         'selected': '✔ Đã chọn',
