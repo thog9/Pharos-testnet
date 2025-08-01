@@ -25,8 +25,8 @@ SWAP_ROUTER = Web3.to_checksum_address("0x1a4de519154ae51200b0ad7c90f7fac7554788
 # Token definitions
 TOKENS = {
     "PHRS": {"address": Web3.to_checksum_address("0x76aaaDA469D23216bE5f7C596fA25F282Ff9b364"), "decimals": 18},
-    "USDC": {"address": Web3.to_checksum_address("0xAD902CF99C2dE2f1Ba5ec4d642Fd7E49cae9EE37"), "decimals": 18},
-    "USDT": {"address": Web3.to_checksum_address("0xEd59De2D7ad9C043442e381231eE3646FC3C2939"), "decimals": 18},
+    "USDC": {"address": Web3.to_checksum_address("0x72df0bcd7276f2dfbac900d1ce63c272c4bccced"), "decimals": 6},
+    "USDT": {"address": Web3.to_checksum_address("0xd4071393f8716661958f766df660033b3d35fd29"), "decimals": 6},
 }
 
 # Fee tiers
@@ -137,7 +137,7 @@ LANG = {
         'balance_info': 'Số dư',
         'pausing': 'Tạm dừng',
         'seconds': 'giây',
-        'completed': '🏁 HOÀN THÀNH: {successful}/{total} SWAP THÀNH CÔNG',
+        'completed': '✔ HOÀN THÀNH: {successful}/{total} SWAP THÀNH CÔNG',
         'error': 'Lỗi',
         'connect_success': '✅ Thành công: Đã kết nối với mạng Pharos Testnet',
         'connect_error': '❌ Không thể kết nối với RPC',
@@ -188,7 +188,7 @@ LANG = {
         'balance_info': 'Balance',
         'pausing': 'Pausing',
         'seconds': 'seconds',
-        'completed': '🏁 COMPLETED: {successful}/{total} SWAPS SUCCESSFUL',
+        'completed': '✔ COMPLETED: {successful}/{total} SWAPS SUCCESSFUL',
         'error': 'Error',
         'connect_success': '✅ Success: Connected to Pharos Testnet',
         'connect_error': '❌ Failed to connect to RPC',
