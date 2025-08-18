@@ -94,21 +94,9 @@ async def run_mintomnihub(language: str):
     from scripts.mintomnihub import run_mintomnihub as mintomnihub_run
     await mintomnihub_run(language)
 
-async def run_mintbadgefaroswap(language: str):
-    from scripts.mintbadgefaroswap import run_mintbadgefaroswap as mintbadgefaroswap_run
-    await mintbadgefaroswap_run(language)
-
-async def run_mintbadgefaroswap2(language: str):
-    from scripts.mintbadgefaroswap2 import run_mintbadgefaroswap2 as mintbadgefaroswap2_run
-    await mintbadgefaroswap2_run(language)
-
-async def run_mintbadge(language: str):
-    from scripts.mintbadge import run_mintbadge as mintbadge_run
-    await mintbadge_run(language)
-
-async def run_mintbadgezentra(language: str):
-    from scripts.mintbadgezentra import run_mintbadgezentra as mintbadgezentra_run
-    await mintbadgezentra_run(language)
+async def run_mintbadgegrandline(language: str):
+    from scripts.mintbadgegrandline import run_mintbadgegrandline as mintbadgegrandline_run
+    await mintbadgegrandline_run(language)
 
 async def run_mintgotchipus(language: str):
     from scripts.mintgotchipus import run_mintgotchipus as mintgotchipus_run
@@ -130,13 +118,6 @@ async def run_pnsdomain(language: str):
     from scripts.pnsdomain import run_pnsdomain as pnsdomain_run
     await pnsdomain_run(language)
 
-async def run_mintbadgegotchipus(language: str):
-    from scripts.mintbadgegotchipus import run_mintbadgegotchipus as mintbadgegotchipus_run
-    await mintbadgegotchipus_run(language)
-
-async def run_mintbadgespout(language: str):
-    from scripts.mintbadgespout import run_mintbadgespout as mintbadgespout_run
-    await mintbadgespout_run(language)
 
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
@@ -157,17 +138,12 @@ SCRIPT_MAP = {
     "wrap": run_wrap,
     "easynode": run_easynode,
     "mintomnihub": run_mintomnihub,
-    "mintbadgefaroswap": run_mintbadgefaroswap,
-    "mintbadgefaroswap2": run_mintbadgefaroswap2,
-    "mintbadge": run_mintbadge,
-    "mintbadgezentra": run_mintbadgezentra,
+    "mintbadgegrandline": run_mintbadgegrandline,
     "mintgotchipus": run_mintgotchipus,
     "conftnft": run_conftnft,
     "domain": run_domain,
     "primussend": run_primussend,
     "pnsdomain": run_pnsdomain,
-    "mintbadgegotchipus": run_mintbadgegotchipus,
-    "mintbadgespout": run_mintbadgespout,
     "exit": cmd_exit
 }
 
@@ -181,27 +157,22 @@ def get_available_scripts(language):
             {"name": "3. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
             {"name": "4. Deploy NFT smart-contract | Pharos Testnet", "value": "nftcollection"},
             {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
-            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
-            {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
+            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "swap"},
+            {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
             {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
             
-            {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
-            {"name": "14. Mint NFT FaroSwap Testnet Badge 2 -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap2"},
-            {"name": "15. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
-            {"name": "16. Mint NFT Zentra Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgezentra"},
-            {"name": "17. Mint NFT Gotchipus Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgegotchipus"},
+            {"name": "13. Mint NFT Badge → Grandline | Pharos Testnet", "value": "mintbadgegrandline"},
             
-            {"name": "18. Mint NFT Spout Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgespout"},
-            {"name": "19. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "20. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft"},
-            {"name": "21. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
+            {"name": "14. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "15. Mint NFT Community Member of Pharos → CoNFT | Pharos Testnet", "value": "mintnftnft"},
+            {"name": "16. Mint Domain → CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "22. Gửi TIP ngẫu nhiên hoặc File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend"},
-            {"name": "23. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain"},
+            {"name": "17. Gửi TIP ngẫu nhiên hoặc File (username.txt) → Primus Labs | Pharos Testnet", "value": "primussend"},
+            {"name": "18. Mint Domain Pharos → PNS | Pharos Testnet", "value": "pnsdomain"},
             
 
             {"name": "X. Thoát", "value": "exit"},
@@ -212,27 +183,22 @@ def get_available_scripts(language):
             {"name": "3. Send Token ERC20 random or File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
             {"name": "4. Deploy NFT smart-contract | Pharos Testnet", "value": "nftcollection"},
             {"name": "5. Send TX random or File (address.txt) | Pharos Testnet", "value": "sendtx"},
-            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "swap"},
-            {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] -> Zenith DEX | Pharos Testnet", "value": "liquidity"},
+            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "swap"},
+            {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "liquidity"},
             {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
             {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
             {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
             {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
             {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
             
-            {"name": "13. Mint NFT FaroSwap Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap"},
-            {"name": "14. Mint NFT FaroSwap Testnet Badge 2 -> Grandline | Pharos Testnet", "value": "mintbadgefaroswap2"},
-            {"name": "15. Mint NFT Pharos Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadge"},
-            {"name": "16. Mint NFT Zentra Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgezentra"},
-            {"name": "17. Mint NFT Gotchipus Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgegotchipus"},           
-            {"name": "18. Mint NFT Spout Testnet Badge -> Grandline | Pharos Testnet", "value": "mintbadgespout"},
+            {"name": "13. Mint NFT Badge → Grandline | Pharos Testnet", "value": "mintbadgegrandline"},
             
-            {"name": "19. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "20. Mint NFT Community Member of Pharos -> CoNFT | Pharos Testnet", "value": "mintnftnft"},
-            {"name": "21. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
+            {"name": "14. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
+            {"name": "15. Mint NFT Community Member of Pharos → CoNFT | Pharos Testnet", "value": "mintnftnft"},
+            {"name": "16. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
 
-            {"name": "22. Send TIPs random or File (username.txt) -> Primus Labs | Pharos Testnet", "value": "primussend"},
-            {"name": "23. Mint Domain Pharos -> PNS | Pharos Testnet", "value": "pnsdomain"},
+            {"name": "17. Send TIPs random or File (username.txt) → Primus Labs | Pharos Testnet", "value": "primussend"},
+            {"name": "18. Mint Domain Pharos → PNS | Pharos Testnet", "value": "pnsdomain"},
 
             {"name": "X. Thoát", "value": "exit"},
         ]
@@ -345,4 +311,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
