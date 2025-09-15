@@ -44,6 +44,9 @@ CONTRACTS_TO_MINT = [
     {"address": "0x0d00314d006e70ca08ac37c3469b4bf958a7580b", "title": "AutoStaking Testnet Badge", "price": 1.0},
     {"address": "0x4af366c7269dc9a0335bd055af979729c20e0f5f", "title": "PNS Testnet Badge", "price": 1.0},
     {"address": "0x9979b7fedf761c2989642f63ba6ed580dbdfc46f", "title": "Brokex Testnet Badge", "price": 1.0},
+    {"address": "0x822483f6cf39b7dad66fec5f4feecbfd72172626", "title": "OpenFi Testnet Badge", "price": 1.0},
+    {"address": "0xc188e0ad7e39ccd3bdfdc5572e06e5ac08f1a847", "title": "MoveFlow Testnet Badge", "price": 1.0},
+
 ]
 
 # ABI
@@ -542,4 +545,5 @@ async def run_mintbadgegrandline(language: str = 'vi'):
 
 if __name__ == "__main__":
     asyncio.run(run_mintbadgegrandline('vi'))
+
 
