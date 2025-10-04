@@ -46,6 +46,7 @@ CONTRACTS_TO_MINT = [
     {"address": "0x9979b7fedf761c2989642f63ba6ed580dbdfc46f", "title": "Brokex Testnet Badge", "price": 1.0},
     {"address": "0x822483f6cf39b7dad66fec5f4feecbfd72172626", "title": "OpenFi Testnet Badge", "price": 1.0},
     {"address": "0xc188e0ad7e39ccd3bdfdc5572e06e5ac08f1a847", "title": "MoveFlow Testnet Badge", "price": 1.0},
+    {"address": "0xf4535d0781d973a26b48c617410419ec66b2af1c", "title": "Zenith Testnet Badge", "price": 1.0},
 
 ]
 
@@ -545,5 +546,6 @@ async def run_mintbadgegrandline(language: str = 'vi'):
 
 if __name__ == "__main__":
     asyncio.run(run_mintbadgegrandline('vi'))
+
 
 
