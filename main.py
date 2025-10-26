@@ -204,7 +204,7 @@ def get_available_scripts(language, season):
                 {"name": "1. Faucet PHRS → Pharos Network ", "value": "faucet"},
                 {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
                 {"name": "3. Check-in Hàng ngày", "value": "checkin"},
-                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe"},
+                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe", "locked": True},
                 
                 {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 
@@ -237,7 +237,7 @@ def get_available_scripts(language, season):
                 {"name": "1. Faucet PHRS → Pharos Network ", "value": "faucet"},
                 {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
                 {"name": "3. Daily Check-in", "value": "checkin"},
-                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe"},
+                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe", "locked": True},
                 
                 {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 {"name": "X. Exit", "value": "exit"},
@@ -379,3 +379,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
