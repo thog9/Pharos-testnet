@@ -45,7 +45,7 @@ CONFIG = {
 
 # Token definitions with checksummed addresses
 TOKEN_ADDRESSES = {
-    "PHRS": {"address": Web3.to_checksum_address("native"), "decimals": 18},
+    "PHRS": {"address": "native", "decimals": 18},
     "CASH+": {"address": Web3.to_checksum_address("0x56f4add11d723412d27a9e9433315401b351d6e3"), "decimals": 18},
     "USDT": {"address": Web3.to_checksum_address("0xe7e84b8b4f39c507499c40b4ac199b050e2882d5"), "decimals": 6},
 }
