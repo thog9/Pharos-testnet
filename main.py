@@ -32,6 +32,7 @@ def _banner():
 ██║░░░░░██║░░██║██║░░██║██║░░██║╚█████╔╝██████╔╝  ░░░██║░░░███████╗██████╔╝░░░██║░░░██║░╚███║███████╗░░░██║░░░
 ╚═╝░░░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═════╝░  ░░░╚═╝░░░╚══════╝╚═════╝░░░░╚═╝░░░╚═╝░░╚══╝╚══════╝░░░╚═╝░░░
 
+
     """
     print(f"{Fore.GREEN}{banner:^80}{Style.RESET_ALL}")
     print(f"{Fore.GREEN}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
@@ -45,79 +46,101 @@ def _banner():
 def _clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-# Các hàm giả lập cho các lệnh mới
+# Các hàm chạy script
 async def run_checkin(language: str):
-    from scripts.checkin import run_checkin as checkin_run
+    from scripts.ss1.checkin import run_checkin as checkin_run
     await checkin_run(language)
 
 async def run_sendtx(language: str):
-    from scripts.sendtx import run_sendtx as sendtx_run
+    from scripts.ss1.sendtx import run_sendtx as sendtx_run
     await sendtx_run(language)
 
 async def run_swap(language: str):
-    from scripts.swap import run_swap as swap_run
+    from scripts.ss1.swap import run_swap as swap_run
     await swap_run(language)
 
 async def run_liquidity(language: str):
-    from scripts.liquidity import run_liquidity as liquidity_run
+    from scripts.ss1.liquidity import run_liquidity as liquidity_run
     await liquidity_run(language)
 
 async def run_deploytoken(language: str):
-    from scripts.deploytoken import run_deploytoken as deploytoken_run
+    from scripts.ss1.deploytoken import run_deploytoken as deploytoken_run
     await deploytoken_run(language)
 
 async def run_sendtoken(language: str):
-    from scripts.sendtoken import run_sendtoken as sendtoken_run
+    from scripts.ss1.sendtoken import run_sendtoken as sendtoken_run
     await sendtoken_run(language)
 
 async def run_nftcollection(language: str):
-    from scripts.nftcollection import run_nftcollection as nftcollection_run
+    from scripts.ss1.nftcollection import run_nftcollection as nftcollection_run
     await nftcollection_run(language)
 
 async def run_mintair(language: str):
-    from scripts.mintair import run_mintair as mintair_run
+    from scripts.ss1.mintair import run_mintair as mintair_run
     await mintair_run(language)
 
 async def run_social(language: str):
-    from scripts.social import run_social as social_run
+    from scripts.ss1.social import run_social as social_run
     await social_run(language)
 
 async def run_wrap(language: str):
-    from scripts.wrap import run_wrap as wrap_run
+    from scripts.ss1.wrap import run_wrap as wrap_run
     await wrap_run(language)
 
 async def run_easynode(language: str):
-    from scripts.easynode import run_easynode as easynode_run
+    from scripts.ss1.easynode import run_easynode as easynode_run
     await easynode_run(language)
 
 async def run_mintomnihub(language: str):
-    from scripts.mintomnihub import run_mintomnihub as mintomnihub_run
+    from scripts.ss1.mintomnihub import run_mintomnihub as mintomnihub_run
     await mintomnihub_run(language)
 
 async def run_mintbadgegrandline(language: str):
-    from scripts.mintbadgegrandline import run_mintbadgegrandline as mintbadgegrandline_run
+    from scripts.ss1.mintbadgegrandline import run_mintbadgegrandline as mintbadgegrandline_run
     await mintbadgegrandline_run(language)
 
 async def run_mintgotchipus(language: str):
-    from scripts.mintgotchipus import run_mintgotchipus as mintgotchipus_run
+    from scripts.ss1.mintgotchipus import run_mintgotchipus as mintgotchipus_run
     await mintgotchipus_run(language)
 
 async def run_conftnft(language: str):
-    from scripts.conftnft import run_conftnft as conftnft_run
+    from scripts.ss1.conftnft import run_conftnft as conftnft_run
     await conftnft_run(language)
 
 async def run_domain(language: str):
-    from scripts.domain import run_domain as domain_run
+    from scripts.ss1.domain import run_domain as domain_run
     await domain_run(language)
 
 async def run_primussend(language: str):
-    from scripts.primussend import run_primussend as primussend_run
+    from scripts.ss1.primussend import run_primussend as primussend_run
     await primussend_run(language)
 
 async def run_pnsdomain(language: str):
-    from scripts.pnsdomain import run_pnsdomain as pnsdomain_run
+    from scripts.ss1.pnsdomain import run_pnsdomain as pnsdomain_run
     await pnsdomain_run(language)
 
+#Atlantic
+
+async def run_faucet(language: str):
+    from scripts.atlantic.faucet import run_faucet as faucet_run
+    await faucet_run(language)
+
+async def run_faucetfaro(language: str):
+    from scripts.atlantic.faucetfaro import run_faucetfaro as faucetfaro_run
+    await faucetfaro_run(language)
+
+async def run_checkin(language: str):
+    from scripts.atlantic.checkin import run_checkin as checkin_run
+    await checkin_run(language)
+
+async def run_subscribe(language: str):
+    from scripts.atlantic.subscribe import run_subscribe as subscribe_run
+    await subscribe_run(language)
+
+async def run_mintbadgegrandline(language: str):
+    from scripts.atlantic.mintbadgegrandline import run_mintbadgegrandline as mintbadgegrandline_run
+    await mintbadgegrandline_run(language)
+    
 
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
@@ -144,66 +167,84 @@ SCRIPT_MAP = {
     "domain": run_domain,
     "primussend": run_primussend,
     "pnsdomain": run_pnsdomain,
+#Atlantic
+    "faucet": run_faucet,
+    "faucetfaro": run_faucetfaro,
+    "subscribe": run_subscribe,
     "exit": cmd_exit
 }
 
-
 # Danh sách script và thông báo theo ngôn ngữ
-def get_available_scripts(language):
+def get_available_scripts(language, season):
+    season_label = {"ss1": "Season 1 & Season 2", "atlantic": "Atlantic"}
     scripts = {
-        'vi': [
-            {"name": "1. Check-in Hàng ngày | Pharos Testnet", "value": "checkin"},
-            {"name": "2. Deploy Token smart-contract | Pharos Testnet", "value": "deploytoken"},
-            {"name": "3. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
-            {"name": "4. Deploy NFT smart-contract | Pharos Testnet", "value": "nftcollection"},
-            {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt) | Pharos Testnet", "value": "sendtx"},
-            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "swap"},
-            {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
-            {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
-            {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
-            
-            {"name": "13. Mint NFT Badge → Grandline | Pharos Testnet", "value": "mintbadgegrandline"},
-            
-            {"name": "14. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "15. Mint NFT Community Member of Pharos → CoNFT | Pharos Testnet", "value": "mintnftnft"},
-            {"name": "16. Mint Domain → CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
-
-            {"name": "17. Gửi TIP ngẫu nhiên hoặc File (username.txt) → Primus Labs | Pharos Testnet", "value": "primussend"},
-            {"name": "18. Mint Domain Pharos → PNS | Pharos Testnet", "value": "pnsdomain"},
-            
-
-            {"name": "X. Thoát", "value": "exit"},
-        ],
-        'en': [
-            {"name": "1. Daily Check-in | Pharos Testnet", "value": "checkin"},
-            {"name": "2. Deploy Token smart-contract | Pharos Testnet", "value": "deploytoken"},
-            {"name": "3. Send Token ERC20 random or File (addressERC20.txt) | Pharos Testnet", "value": "sendtoken"},
-            {"name": "4. Deploy NFT smart-contract | Pharos Testnet", "value": "nftcollection"},
-            {"name": "5. Send TX random or File (address.txt) | Pharos Testnet", "value": "sendtx"},
-            {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "swap"},
-            {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] → Zenith DEX | Pharos Testnet", "value": "liquidity"},
-            {"name": "8. Deploy Smart Contract Mintair | Pharos Testnet", "value": "mintair"},
-            {"name": "9. Deploy Smart Contract EasyNode | Pharos Testnet", "value": "easynode"},
-            {"name": "10. Verify Social Pharos [ Connect X - Discord ] | Pharos Testnet", "value": "social"},
-            {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ] | Pharos Testnet", "value": "wrap"},
-            {"name": "12. Mint OmniHub NFT Studio | Pharos Testnet", "value": "mintomnihub"},
-            
-            {"name": "13. Mint NFT Badge → Grandline | Pharos Testnet", "value": "mintbadgegrandline"},
-            
-            {"name": "14. Mint NFT Pharos Gotchipus | Pharos Testnet", "value": "mintgotchipus"},
-            {"name": "15. Mint NFT Community Member of Pharos → CoNFT | Pharos Testnet", "value": "mintnftnft"},
-            {"name": "16. Mint Domain -> CoNFT │ Pharos Testnet", "value": "domain", "locked": True},
-
-            {"name": "17. Send TIPs random or File (username.txt) → Primus Labs | Pharos Testnet", "value": "primussend"},
-            {"name": "18. Mint Domain Pharos → PNS | Pharos Testnet", "value": "pnsdomain"},
-
-            {"name": "X. Thoát", "value": "exit"},
-        ]
+        'vi': {
+            'ss1': [
+                {"name": "1. Check-in Hàng ngày", "value": "checkin"},
+                {"name": "2. Deploy Token smart-contract", "value": "deploytoken"},
+                {"name": "3. Gửi Token ERC20 ngẫu nhiên hoặc File (addressERC20.txt)", "value": "sendtoken"},
+                {"name": "4. Deploy NFT smart-contract", "value": "nftcollection"},
+                {"name": "5. Gửi TX ngẫu nhiên hoặc File (address.txt)", "value": "sendtx"},
+                {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX", "value": "swap"},
+                {"name": "7. Thêm thanh khoản [ PHRS | USDC | USDT ] → Zenith DEX", "value": "liquidity"},
+                {"name": "8. Deploy Smart Contract Mintair", "value": "mintair"},
+                {"name": "9. Deploy Smart Contract EasyNode", "value": "easynode"},
+                {"name": "10. Verify Social Pharos [ Connect X - Discord ]", "value": "social"},
+                {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ]", "value": "wrap"},
+                {"name": "12. Mint OmniHub NFT Studio", "value": "mintomnihub"},
+                {"name": "13. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "14. Mint NFT Pharos Gotchipus", "value": "mintgotchipus"},
+                {"name": "15. Mint NFT Community Member of Pharos → CoNFT", "value": "conftnft"},
+                {"name": "16. Mint Domain → CoNFT", "value": "domain", "locked": True},
+                {"name": "17. Gửi TIP ngẫu nhiên hoặc File (username.txt) → Primus Labs", "value": "primussend"},
+                {"name": "18. Mint Domain Pharos → PNS", "value": "pnsdomain"},
+                {"name": "X. Thoát", "value": "exit"},
+            ],
+            'atlantic': [
+                {"name": "1. Faucet PHRS → Pharos Network ", "value": "faucet"},
+                {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
+                {"name": "3. Check-in Hàng ngày", "value": "checkin"},
+                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe"},
+                
+                {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                
+                {"name": "X. Thoát", "value": "exit"},
+            ]
+        },
+        'en': {
+            'ss1': [
+                {"name": "1. Daily Check-in", "value": "checkin"},
+                {"name": "2. Deploy Token smart-contract", "value": "deploytoken"},
+                {"name": "3. Send Token ERC20 random or File (addressERC20.txt)", "value": "sendtoken"},
+                {"name": "4. Deploy NFT smart-contract", "value": "nftcollection"},
+                {"name": "5. Send TX random or File (address.txt)", "value": "sendtx"},
+                {"name": "6. Swap tokens [ PHRS | USDC | USDT ] → Zenith DEX", "value": "swap"},
+                {"name": "7. Add Liquidity [ PHRS | USDC | USDT ] → Zenith DEX", "value": "liquidity"},
+                {"name": "8. Deploy Smart Contract Mintair", "value": "mintair"},
+                {"name": "9. Deploy Smart Contract EasyNode", "value": "easynode"},
+                {"name": "10. Verify Social Pharos [ Connect X - Discord ]", "value": "social"},
+                {"name": "11. Wrap | Unwrap [ PHRS <-> WPHRS ]", "value": "wrap"},
+                {"name": "12. Mint OmniHub NFT Studio", "value": "mintomnihub"},
+                {"name": "13. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "14. Mint NFT Pharos Gotchipus", "value": "mintgotchipus"},
+                {"name": "15. Mint NFT Community Member of Pharos → CoNFT", "value": "conftnft"},
+                {"name": "16. Mint Domain → CoNFT", "value": "domain", "locked": True},
+                {"name": "17. Send TIPs random or File (username.txt) → Primus Labs", "value": "primussend"},
+                {"name": "18. Mint Domain Pharos → PNS", "value": "pnsdomain"},
+                {"name": "X. Exit", "value": "exit"},
+            ],
+            'atlantic': [
+                {"name": "1. Faucet PHRS → Pharos Network ", "value": "faucet"},
+                {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
+                {"name": "3. Daily Check-in", "value": "checkin"},
+                {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe"},
+                
+                {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "X. Exit", "value": "exit"},
+            ]
+        }
     }
-    return scripts[language]
+    return scripts[language][season]
 
 def run_script(script_func, language):
     """Chạy script bất kể nó là async hay không."""
@@ -229,29 +270,49 @@ def select_language():
             return answer['language']
         print(f"{Fore.RED}❌ {'Lựa chọn không hợp lệ / Invalid choice':^76}{Style.RESET_ALL}")
 
+def select_season():
+    while True:
+        _clear()
+        _banner()
+        print(f"{Fore.GREEN}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
+        print_border("CHỌN MÙA / SELECT SEASON", Fore.YELLOW)
+        questions = [
+            inquirer.List('season',
+                          message=f"{Fore.CYAN}Vui lòng chọn mùa / Please select season:{Style.RESET_ALL}",
+                          choices=[("1. Season 1 & Season 2", 'ss1'), ("2. Atlantic", 'atlantic')],
+                          carousel=True)
+        ]
+        answer = inquirer.prompt(questions)
+        if answer and answer['season'] in ['ss1', 'atlantic']:
+            return answer['season']
+        print(f"{Fore.RED}❌ {'Lựa chọn không hợp lệ / Invalid choice':^76}{Style.RESET_ALL}")
+
 def main():
     _clear()
     _banner()
     language = select_language()
+    season = select_season()
 
     messages = {
         "vi": {
-            "running": "Đang thực thi: {}",
-            "completed": "Đã hoàn thành: {}",
+            "running": f"Đang thực thi: {{}} (Mùa: {season.upper()})",
+            "completed": f"Đã hoàn thành: {{}} (Mùa: {season.upper()})",
             "error": "Lỗi: {}",
             "press_enter": "Nhấn Enter để tiếp tục...",
-            "menu_title": "MENU CHÍNH",
+            "menu_title": f"MENU CHÍNH - PHAROS TESTNET - MÙA {season.upper()}",
             "select_script": "Chọn script để chạy",
-            "locked": "🔒 Script này bị khóa! Vui lòng vào group hoặc donate để mở khóa."
+            "locked": "🔒 Script này bị khóa! Vui lòng vào group hoặc donate để mở khóa.",
+            "no_script": "Chưa có script nào cho mùa này!"
         },
         "en": {
-            "running": "Running: {}",
-            "completed": "Completed: {}",
+            "running": f"Running: {{}} (Season: {season.upper()})",
+            "completed": f"Completed: {{}} (Season: {season.upper()})",
             "error": "Error: {}",
             "press_enter": "Press Enter to continue...",
-            "menu_title": "MAIN MENU",
+            "menu_title": f"MAIN MENU - PHAROS TESTNET - SEASON {season.upper()}",
             "select_script": "Select script to run",
-            "locked": "🔒 This script is locked! Please join our group or donate to unlock."
+            "locked": "🔒 This script is locked! Please join our group or donate to unlock.",
+            "no_script": "No scripts available for this season!"
         }
     }
 
@@ -262,7 +323,7 @@ def main():
         print_border(messages[language]["menu_title"], Fore.YELLOW)
         print(f"{Fore.CYAN}│ {messages[language]['select_script'].center(BORDER_WIDTH - 4)} │{Style.RESET_ALL}")
 
-        available_scripts = get_available_scripts(language)
+        available_scripts = get_available_scripts(language, season)
         questions = [
             inquirer.List('script',
                           message=f"{Fore.CYAN}{messages[language]['select_script']}{Style.RESET_ALL}",
@@ -289,10 +350,17 @@ def main():
             input(f"{Fore.YELLOW}⏎ {messages[language]['press_enter']}{Style.RESET_ALL:^76}")
             continue
 
+        if selected_script_value == "none":
+            _clear()
+            _banner()
+            print_border(messages[language]["no_script"], Fore.RED)
+            input(f"{Fore.YELLOW}⏎ {messages[language]['press_enter']}{Style.RESET_ALL:^76}")
+            continue
+
         script_func = SCRIPT_MAP.get(selected_script_value)
         if script_func is None:
             print(f"{Fore.RED}{'═' * BORDER_WIDTH}{Style.RESET_ALL}")
-            print_border(f"{'Chưa triển khai / Not implemented'}: {selected_script_name}", Fore.RED)
+            print_border(f"Chưa triển khai / Not implemented: {selected_script_name}", Fore.RED)
             input(f"{Fore.YELLOW}⏎ {messages[language]['press_enter']}{Style.RESET_ALL:^76}")
             continue
 
@@ -311,5 +379,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
