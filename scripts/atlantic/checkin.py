@@ -45,9 +45,9 @@ CONFIG = {
 
 # Token definitions with checksummed addresses
 TOKEN_ADDRESSES = {
-    "PHRS": {"address": Web3.to_checksum_address("0x76aaaDA469D23216bE5f7C596fA25F282Ff9b364"), "decimals": 18},
-    "USDC": {"address": Web3.to_checksum_address("0xad902cf99c2de2f1ba5ec4d642fd7e49cae9ee37"), "decimals": 18},
-    "USDT": {"address": Web3.to_checksum_address("0xEd59De2D7ad9C043442e381231eE3646FC3C2939"), "decimals": 18},
+    "PHRS": {"address": Web3.to_checksum_address("native"), "decimals": 18},
+    "CASH+": {"address": Web3.to_checksum_address("0x56f4add11d723412d27a9e9433315401b351d6e3"), "decimals": 18},
+    "USDT": {"address": Web3.to_checksum_address("0xe7e84b8b4f39c507499c40b4ac199b050e2882d5"), "decimals": 6},
 }
 
 # ERC20 ABI
@@ -164,7 +164,7 @@ def print_wallets_summary(count: int, language: str = 'en'):
 
 def display_all_wallets_balances(w3: Web3, private_keys: List[Tuple[int, str]], language: str = 'en'):
     print_border(LANG[language]['balance_info'], Fore.CYAN)
-    print(f"{Fore.CYAN}  Wallet | {'PHRS':<10} | {'USDC':<10} | {'USDT':<10}{Style.RESET_ALL}")
+    print(f"{Fore.CYAN}  Wallet | {'PHRS':<10} | {'CASH+':<10} | {'USDT':<10}{Style.RESET_ALL}")
     print(f"{Fore.CYAN}  {'-' * 6} | {'-' * 10} | {'-' * 10} | {'-' * 10}{Style.RESET_ALL}")
 
     for i, (profile_num, key) in enumerate(private_keys, 1):
