@@ -140,6 +140,26 @@ async def run_subscribe(language: str):
 async def run_mintbadgegrandline(language: str):
     from scripts.atlantic.mintbadgegrandline import run_mintbadgegrandline as mintbadgegrandline_run
     await mintbadgegrandline_run(language)
+
+async def run_redeem(language: str):
+    from scripts.atlantic.redeem import run_redeem as redeem_run
+    await redeem_run(language)
+
+async def run_faroswap(language: str):
+    from scripts.atlantic.faroswap import run_faroswap as faroswap_run
+    await faroswap_run(language)
+
+async def run_faroliquidity(language: str):
+    from scripts.atlantic.faroliquidity import run_faroliquidity as faroliquidity_run
+    await faroliquidity_run(language)
+
+async def run_supplyzenith(language: str):
+    from scripts.atlantic.supplyzenith import run_supplyzenith as supplyzenith_run
+    await supplyzenith_run(language)
+
+async def run_borrowzenith(language: str):
+    from scripts.atlantic.borrowzenith import run_borrowzenith as borrowzenith_run
+    await borrowzenith_run(language)
     
 
 async def cmd_exit(language: str):
@@ -171,6 +191,11 @@ SCRIPT_MAP = {
     "faucet": run_faucet,
     "faucetfaro": run_faucetfaro,
     "subscribe": run_subscribe,
+    "redeem": run_redeem,
+    "faroswap": run_faroswap,
+    "faroliquidity": run_faroliquidity,
+    "supplyzenith": run_supplyzenith,
+    "borrowzenith": run_borrowzenith,
     "exit": cmd_exit
 }
 
@@ -205,8 +230,12 @@ def get_available_scripts(language, season):
                 {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
                 {"name": "3. Check-in Hàng ngày", "value": "checkin"},
                 {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe", "locked": True},
-                
-                {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "5. Redeem CASH+ | USDT → Asseto Finance", "value": "redeem", "locked": True},
+                {"name": "6. Swap Tokens → FaroSwap", "value": "faroswap", "locked": True},
+                {"name": "7. Add Liquidity USDC/USDT → FaroSwap", "value": "faroliquidity", "locked": True},
+                {"name": "8. Supply WBTC/WETH → Zenith Lending", "value": "supplyzenith", "locked": True},
+                {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
+                {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 
                 {"name": "X. Thoát", "value": "exit"},
             ]
@@ -238,8 +267,12 @@ def get_available_scripts(language, season):
                 {"name": "2. Faucet PHRS → FaroSwap", "value": "faucetfaro"},
                 {"name": "3. Daily Check-in", "value": "checkin"},
                 {"name": "4. Subscribe USDT | CASH+ → Asseto Finance ", "value": "subscribe", "locked": True},
-                
-                {"name": "5. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "5. Redeem CASH+ | USDT → Asseto Finance", "value": "redeem", "locked": True},
+                {"name": "6. Swap Tokens → FaroSwap", "value": "faroswap", "locked": True},
+                {"name": "7. Add Liquidity USDC/USDT → FaroSwap", "value": "faroliquidity", "locked": True},
+                {"name": "8. Supply WBTC/WETH → Zenith Lending", "value": "supplyzenith", "locked": True},
+                {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
+                {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 {"name": "X. Exit", "value": "exit"},
             ]
         }
@@ -379,4 +412,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
