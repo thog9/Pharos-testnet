@@ -160,6 +160,10 @@ async def run_supplyzenith(language: str):
 async def run_borrowzenith(language: str):
     from scripts.atlantic.borrowzenith import run_borrowzenith as borrowzenith_run
     await borrowzenith_run(language)
+
+async def run_faucetaquaflux(language: str):
+    from scripts.atlantic.faucetaquaflux import run_faucetaquaflux as faucetaquaflux_run
+    await faucetaquaflux_run(language)
     
 
 async def cmd_exit(language: str):
@@ -190,6 +194,7 @@ SCRIPT_MAP = {
 #Atlantic
     "faucet": run_faucet,
     "faucetfaro": run_faucetfaro,
+    "faucetaquaflux": run_faucetaquaflux,
     "subscribe": run_subscribe,
     "redeem": run_redeem,
     "faroswap": run_faroswap,
@@ -236,7 +241,7 @@ def get_available_scripts(language, season):
                 {"name": "8. Supply WBTC/WETH → Zenith Lending", "value": "supplyzenith", "locked": True},
                 {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
                 {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
-                
+                {"name": "11. Faucet Tokens → AquaFlux", "value": "faucetaquaflux", "locked": True},
                 {"name": "X. Thoát", "value": "exit"},
             ]
         },
@@ -273,6 +278,7 @@ def get_available_scripts(language, season):
                 {"name": "8. Supply WBTC/WETH → Zenith Lending", "value": "supplyzenith", "locked": True},
                 {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
                 {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
+                {"name": "11. Faucet Tokens → AquaFlux", "value": "faucetaquaflux", "locked": True},
                 {"name": "X. Exit", "value": "exit"},
             ]
         }
@@ -412,5 +418,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
