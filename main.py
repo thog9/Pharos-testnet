@@ -164,7 +164,14 @@ async def run_borrowzenith(language: str):
 async def run_faucetaquaflux(language: str):
     from scripts.atlantic.faucetaquaflux import run_faucetaquaflux as faucetaquaflux_run
     await faucetaquaflux_run(language)
-    
+
+async def run_split(language: str):
+    from scripts.atlantic.split import run_split as split_run
+    await split_run(language)
+
+async def run_combine(language: str):
+    from scripts.atlantic.combine import run_combine as combine_run
+    await combine_run(language)
 
 async def cmd_exit(language: str):
     messages = {"vi": "Đang thoát...", "en": "Exiting..."}
@@ -201,6 +208,8 @@ SCRIPT_MAP = {
     "faroliquidity": run_faroliquidity,
     "supplyzenith": run_supplyzenith,
     "borrowzenith": run_borrowzenith,
+    "split": run_split,
+    "combine": run_combine,
     "exit": cmd_exit
 }
 
@@ -242,6 +251,8 @@ def get_available_scripts(language, season):
                 {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
                 {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 {"name": "11. Faucet Tokens → AquaFlux", "value": "faucetaquaflux", "locked": True},
+                {"name": "12. Split RWA | P+C+S → AquaFlux", "value": "split", "locked": True},
+                {"name": "13. Combine RWA | P+C+S → AquaFlux", "value": "combine", "locked": True},
                 {"name": "X. Thoát", "value": "exit"},
             ]
         },
@@ -279,6 +290,8 @@ def get_available_scripts(language, season):
                 {"name": "9. Borrow WBTC/WETH → Zenith Lending", "value": "borrowzenith", "locked": True},
                 {"name": "10. Mint NFT Badge → Grandline", "value": "mintbadgegrandline"},
                 {"name": "11. Faucet Tokens → AquaFlux", "value": "faucetaquaflux", "locked": True},
+                {"name": "12. Split RWA | P+C+S → AquaFlux", "value": "split", "locked": True},
+                {"name": "13. Combine RWA | P+C+S → AquaFlux", "value": "combine", "locked": True},
                 {"name": "X. Exit", "value": "exit"},
             ]
         }
@@ -418,6 +431,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
